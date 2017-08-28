@@ -9,31 +9,37 @@
 // import imgPausePath from '../assets/icon-pause-50x50.png'
 
 export default {
-  name: 'controllers',
+  name: 'Controls',
+
+  // component properties/variables
   props: {
     active: {
       type: Boolean,
       default: true
     }
   },
+
+  // variables
   data () {
     return {
       pause: false
     }
   },
 
-  mounted () {
-    this.pause = !this.active
-    // this.imgPause = imgPausePath
-  },
-
+  // methods
   methods: {
     toggle () {
       this.pause = !this.pause
-      this.$emit('pause', {
+      this.$emit('play-button-toggle', {
         'pause': this.pause
       })
     }
+  },
+
+  // component Lifecycle hooks
+  mounted () {
+    this.pause = !this.active
+    // this.imgPause = imgPausePath
   }
 }
 </script>

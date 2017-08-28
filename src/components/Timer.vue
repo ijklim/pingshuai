@@ -6,30 +6,30 @@
 
 <script>
 export default {
-  name: 'timer',
+  name: 'Timer',
+
+  // component properties/variables
   props: {
     active: {
       type: Boolean,
       default: true
     }
   },
+
+  // variables
   data () {
     return {
       counter: '00 : 00 : 00',
-      startTime: (new Date()).getTime(),
-      interval: 1000,     /* in ms */
+      oneSecond: 1000,
       timeDifference: 0
     }
   },
-  mounted () {
-    setInterval(this.setCounter, this.interval)
-  },
 
+  // methods
   methods: {
     setCounter () {
-      /* let timeDiff = (new Date((new Date()).getTime() - this.startTime)) */
       if (this.active) {
-        this.timeDifference += this.interval
+        this.timeDifference += this.oneSecond
         var time = new Date(this.timeDifference)
         this.counter = '' +
                         ('00' + time.getUTCHours()).slice(-2) +
@@ -39,6 +39,11 @@ export default {
                         ('00' + time.getUTCSeconds()).slice(-2)
       }
     }
+  },
+
+  // component Lifecycle hooks
+  mounted () {
+    setInterval(this.setCounter, this.oneSecond)
   }
 }
 </script>

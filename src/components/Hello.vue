@@ -1,23 +1,27 @@
 <template>
   <div class="hello">
     <timer :active="active"></timer>
-    <controls @pause="active = !active"></controls>
+    <controls @play-button-toggle="active = !active"></controls>
+    <swing-counter :active="active" :speed="speed"></swing-counter>
   </div>
 </template>
 
 <script>
 import Timer from './Timer'
 import Controls from './Controls'
+import SwingCounter from './SwingCounter'
 
 export default {
   name: 'hello',
   components: {
     Timer,
-    Controls
+    Controls,
+    SwingCounter
   },
   data () {
     return {
-      active: true
+      active: true,
+      speed: 2000       /* in ms, time taken for each swing */
     }
   }
 }
