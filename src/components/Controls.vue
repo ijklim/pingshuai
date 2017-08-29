@@ -1,13 +1,14 @@
 <template>
-  <div class='controllers'>
-    <button @click='toggle' :class='{ "play": pause, "pause": !pause }'>
-    </button>
+  <div class='controls'>
+    <transition name='fade' mode="out-in">
+      <!-- Note: Without unique key transition would not work -->
+      <button @click='toggle' class='pause' :key='pause' v-if='!pause' title='Pause'></button>
+      <button @click='toggle' class='play' :key='play' v-else title='Start'></button>
+    </transition>
   </div>
 </template>
 
 <script>
-// import imgPausePath from '../assets/icon-pause-50x50.png'
-
 export default {
   name: 'Controls',
 
@@ -39,14 +40,13 @@ export default {
   // component Lifecycle hooks
   mounted () {
     this.pause = !this.active
-    // this.imgPause = imgPausePath
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .controllers {
+  .controls {
     position: absolute;
     width: 100%;
     bottom: 0px;
@@ -72,5 +72,13 @@ export default {
 
   button:hover {
     cursor: pointer;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: all .5s ease-out;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+    transform: scale(0.1);
   }
 </style>

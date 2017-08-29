@@ -1,6 +1,9 @@
 <template>
-  <div class='swing-counter' :class='{ "pause": !active }'>
-    {{ counter + 1 }}
+  <div class='swing-counter-wrapper'>
+    <div class='swing-counter' :class='{ "pause": !active }'>
+      {{ counter + 1 }}
+    </div>
+    <div>Speed: {{ speed / 1000 }}s per swing</div>
   </div>
 </template>
 
@@ -48,17 +51,21 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.swing-counter {
+.swing-counter-wrapper {
   /* Center element */
   position: fixed;
   top: 50%;
   left: 50%;
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
+}
 
+.swing-counter {
   color: green;
   font-size: 20em;
 }
+
+
 
 .pause {
   color: #999;

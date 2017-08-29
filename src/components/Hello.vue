@@ -3,20 +3,24 @@
     <timer :active="active"></timer>
     <controls @play-button-toggle="active = !active"></controls>
     <swing-counter :active="active" :speed="speed"></swing-counter>
+    <swing-indicator :active="active" :speed="speed"></swing-indicator>
   </div>
 </template>
 
 <script>
-import Timer from './Timer'
+
 import Controls from './Controls'
 import SwingCounter from './SwingCounter'
+import SwingIndicator from './SwingIndicator'
+import Timer from './Timer'
 
 export default {
   name: 'hello',
   components: {
-    Timer,
     Controls,
-    SwingCounter
+    SwingCounter,
+    SwingIndicator,
+    Timer
   },
   data () {
     return {
