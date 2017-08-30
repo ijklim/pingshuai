@@ -5,6 +5,10 @@
     <controls :active="active" @play-button-toggle="active = !active"></controls>
     <swing-counter :active="active" :speed="speed" @play-button-toggle="active = !active"></swing-counter>
     <swing-indicator :active="active" :speed="speed"></swing-indicator>
+
+    <footer>
+      <a href='/#/resources'>Resources</a>
+    </footer>
   </div>
 </template>
 
@@ -36,21 +40,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #35495E;
-}
 </style>

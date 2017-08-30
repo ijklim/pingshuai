@@ -53,7 +53,7 @@ export default {
 .timer {
   float: left;
   margin: 15px;
-  color: blue;
+  color: red;
   font-size: 1.5em;
 }
 

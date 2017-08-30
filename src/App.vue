@@ -54,4 +54,18 @@ header span {
   box-sizing: border-box;
   padding-top: 16px;
 }
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+}
 </style>
