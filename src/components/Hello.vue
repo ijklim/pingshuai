@@ -2,8 +2,8 @@
   <div class="hello">
     <timer :active="active"></timer>
     <total-counter :active="active" :speed="speed"></total-counter>
-    <controls @play-button-toggle="active = !active"></controls>
-    <swing-counter :active="active" :speed="speed"></swing-counter>
+    <controls :active="active" @play-button-toggle="active = !active"></controls>
+    <swing-counter :active="active" :speed="speed" @play-button-toggle="active = !active"></swing-counter>
     <swing-indicator :active="active" :speed="speed"></swing-indicator>
   </div>
 </template>

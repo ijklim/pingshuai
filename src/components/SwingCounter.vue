@@ -1,6 +1,6 @@
 <template>
   <div class='swing-counter-wrapper'>
-    <div class='swing-counter' :class='{ "pause": !active, "squat": shouldSquat }'>
+    <div class='swing-counter' :class='{ "pause": !active, "squat": shouldSquat }' @click='toggle'>
       {{ counter }}
     </div>
     <div>Speed: {{ speed / 1000 }}s per swing</div>
@@ -44,6 +44,9 @@ export default {
         this.counter = (this.counter++ % (this.maxSwings)) + 1
       }
       // console.log('(SwingCounter) setCounter > Counter: ' + this.counter)
+    },
+    toggle () {
+      this.$emit('play-button-toggle')
     }
   },
 
@@ -71,6 +74,10 @@ export default {
 .swing-counter {
   color: green;
   font-size: 20em;
+}
+
+.swing-counter:hover {
+  cursor: pointer;
 }
 
 .squat {

@@ -1,9 +1,9 @@
 <template>
   <div class='controls'>
     <transition name='fade' mode="out-in">
-      <!-- Note: Without unique key transition would not work -->
-      <button @click='toggle' class='pause' :key='pause' v-if='!pause' title='Pause'></button>
-      <button @click='toggle' class='play' :key='play1' v-else title='Start'></button>
+      <!-- Note: Without at least 1 :key binding transition would not work, and it should correspond to a variable without generating Vue warning -->
+      <button @click='toggle' class='pause' :key='active' v-if='active' title='Pause'></button>
+      <button @click='toggle' class='play' v-else title='Start'></button>
     </transition>
   </div>
 </template>
@@ -23,23 +23,18 @@ export default {
   // variables
   data () {
     return {
-      pause: false
     }
   },
 
   // methods
   methods: {
     toggle () {
-      this.pause = !this.pause
-      this.$emit('play-button-toggle', {
-        'pause': this.pause
-      })
+      this.$emit('play-button-toggle')
     }
   },
 
   // component Lifecycle hooks
   mounted () {
-    this.pause = !this.active
   }
 }
 </script>

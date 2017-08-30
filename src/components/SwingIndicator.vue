@@ -70,10 +70,11 @@ export default {
 
 .swing-indicator {
   background-image: url('../assets/swing_indicator.png');
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 20px;
-  width: 60%;
+  background-position: center;
+  height: 36px;
+  width: 80%;
   margin: auto;
 }
 
