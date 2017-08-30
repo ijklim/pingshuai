@@ -3,7 +3,7 @@
     <transition name='fade' mode="out-in">
       <!-- Note: Without unique key transition would not work -->
       <button @click='toggle' class='pause' :key='pause' v-if='!pause' title='Pause'></button>
-      <button @click='toggle' class='play' :key='play' v-else title='Start'></button>
+      <button @click='toggle' class='play' :key='play1' v-else title='Start'></button>
     </transition>
   </div>
 </template>

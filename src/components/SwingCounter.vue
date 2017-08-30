@@ -1,7 +1,7 @@
 <template>
   <div class='swing-counter-wrapper'>
-    <div class='swing-counter' :class='{ "pause": !active }'>
-      {{ counter + 1 }}
+    <div class='swing-counter' :class='{ "pause": !active, "squat": shouldSquat }'>
+      {{ counter }}
     </div>
     <div>Speed: {{ speed / 1000 }}s per swing</div>
   </div>
@@ -31,20 +31,28 @@ export default {
       maxSwings: 5
     }
   },
+  computed: {
+    shouldSquat: function () {
+      return (this.counter === this.maxSwings)
+    }
+  },
 
   // methods
   methods: {
     setCounter () {
       if (this.active) {
-        this.counter = ++this.counter % (this.maxSwings)
+        this.counter = (this.counter++ % (this.maxSwings)) + 1
       }
+      // console.log('(SwingCounter) setCounter > Counter: ' + this.counter)
     }
   },
 
   // component Lifecycle hooks
   beforeCreate () {},
   mounted () {
+    // console.log('(SwingCounter) Mounted > Speed: ' + this.speed)
     setInterval(this.setCounter, this.speed)
+    // console.log('(SwingCounter) Mounted > Counter: ' + this.counter)
   }
 }
 </script>
@@ -65,7 +73,9 @@ export default {
   font-size: 20em;
 }
 
-
+.squat {
+  color: lightgreen;
+}
 
 .pause {
   color: #999;

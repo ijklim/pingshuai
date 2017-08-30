@@ -37,9 +37,13 @@ export default {
       this.show = this.active
       if (this.active) {
         let indicator = this.$el.querySelector('.swing-indicator')
-        indicator.style.transition = 'all ' + (this.speed / 2000) + 's linear'
+        // Downward movement, completes in half the time of full swing, slows down close to the bottom
+        indicator.style.transition = 'all ' + (this.speed / 2000) + 's'
+        indicator.style.transitionTimingFunction = 'ease-out'
         indicator.style.transform = 'translateY(75vh)'
         setTimeout(() => {
+          // Upward movement, slow to fast
+          indicator.style.transitionTimingFunction = 'ease-in'
           indicator.style.transform = 'translateY(0)'
         }, this.speed / 2)
         // console.log(indicator)
@@ -65,7 +69,9 @@ export default {
 }
 
 .swing-indicator {
-  background-color: red;
+  background-image: url('../assets/swing_indicator.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
   height: 20px;
   width: 60%;
   margin: auto;

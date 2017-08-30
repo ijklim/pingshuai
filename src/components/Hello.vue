@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <timer :active="active"></timer>
+    <total-counter :active="active" :speed="speed"></total-counter>
     <controls @play-button-toggle="active = !active"></controls>
     <swing-counter :active="active" :speed="speed"></swing-counter>
     <swing-indicator :active="active" :speed="speed"></swing-indicator>
@@ -13,6 +14,7 @@ import Controls from './Controls'
 import SwingCounter from './SwingCounter'
 import SwingIndicator from './SwingIndicator'
 import Timer from './Timer'
+import TotalCounter from './TotalCounter'
 
 export default {
   name: 'hello',
@@ -20,12 +22,13 @@ export default {
     Controls,
     SwingCounter,
     SwingIndicator,
-    Timer
+    Timer,
+    TotalCounter
   },
   data () {
     return {
       active: true,
-      speed: 2000       /* in ms, time taken for each swing */
+      speed: 1500       /* in ms, time taken for each swing */
     }
   }
 }
