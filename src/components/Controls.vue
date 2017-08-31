@@ -30,10 +30,7 @@ export default {
   // methods
   methods: {
     toggle () {
-      if (!this.started) {
-        // Starting for the first time, need to move controls down
-        this.started = true
-      }
+      this.started = true
       this.$emit('play-button-toggle')
     }
   },
@@ -57,12 +54,12 @@ export default {
 }
 
 .started {
-  /* Bottom of screen */
-  /* position: absolute; */
-  /* bottom: 0px;
-  margin-bottom: 10px; */
-  transition: all .75s ease-in-out;
-  transform: translate(-50%, 42vh);
+  transition: all .5s ease-in;
+  /* transform: translate(-50%, 42vh); */
+  position: absolute;
+  top: unset;
+  bottom: 10px;
+  transform: translate(-50%, 0);
 }
 
 button {

@@ -1,11 +1,11 @@
 <template>
   <transition name='fade'>
     <!-- Adding :key='counter' to swing-counter-wrapper div will transition each counter change -->
-    <div class='swing-counter-wrapper'@click='toggle' v-if='counter > 0'>
+    <div class='swing-counter-wrapper'@click='toggle' v-if='counter > 0' :key='active'>
       <div class='swing-counter' :class='{ "pause": !active, "squat": shouldSquat }'>
         {{ counter }}
       </div>
-      <div>{{ speed / 1000 }}s per swing</div>
+      <div v-if='counter > 0 && !active' class='speed'>{{ speed / 1000 }}s per swing</div>
     </div>
   </transition>
 </template>
@@ -65,7 +65,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.swing-counter-wrapper {
+.swing-counter-wrapper {  
   /* Center element */
   position: fixed;
   top: 50%;
@@ -81,6 +81,18 @@ export default {
 .swing-counter {
   color: green;
   font-size: 20em;
+  line-height: 1.1em;
+}
+
+/* Mobile landscape */
+@media screen and (max-height: 412px) {
+  .swing-counter {
+    font-size: 12em;
+  }
+
+  .speed {
+    display: none;
+  }
 }
 
 .squat {
@@ -93,7 +105,7 @@ export default {
 
 
 .fade-enter-active, .fade-leave-active {
-  transition: all .5s ease-out;
+  transition: all .5s ease-in-out;
 }
 .fade-enter, .fade-leave-to {
   opacity: 0
