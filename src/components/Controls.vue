@@ -89,10 +89,6 @@ button.pause {
   background-image: url('../assets/icon-pause-50x50.png');
 }
 
-button:hover {
-  cursor: pointer;
-}
-
 .fade-enter-active, .fade-leave-active {
   transition: all .5s ease-out;
 }

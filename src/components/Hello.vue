@@ -5,7 +5,7 @@
     <controls :active="active" @play-button-toggle="active = !active"></controls>
     <swing-counter :active="active" :speed="speed" @play-button-toggle="active = !active"></swing-counter>
     <swing-indicator :active="active" :speed="speed"></swing-indicator>
-
+    <debug-window :show="false"></debug-window>
     <footer>
       <a href='/#/resources'>Resources</a>
     </footer>
@@ -15,6 +15,7 @@
 <script>
 
 import Controls from './Controls'
+import DebugWindow from './DebugWindow'
 import SwingCounter from './SwingCounter'
 import SwingIndicator from './SwingIndicator'
 import Timer from './Timer'
@@ -24,6 +25,7 @@ export default {
   name: 'hello',
   components: {
     Controls,
+    DebugWindow,
     SwingCounter,
     SwingIndicator,
     Timer,

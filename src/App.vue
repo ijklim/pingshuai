@@ -64,6 +64,10 @@ a:hover {
   text-decoration: underline;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 footer {
   position: absolute;
   bottom: 10px;

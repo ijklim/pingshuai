@@ -1,7 +1,7 @@
 <template>
   <div class='swing-indicator-wrapper'>
     <transition name='move'>
-      <div class='swing-indicator' v-show='true'></div>
+      <div class='swing-indicator' v-show='active'></div>
     </transition>
   </div>
 </template>
@@ -26,7 +26,6 @@ export default {
   // variables
   data () {
     return {
-      show: false,
       maxSwings: 5
     }
   },
@@ -34,20 +33,17 @@ export default {
   // methods
   methods: {
     swing () {
-      this.show = this.active
       if (this.active) {
         let indicator = this.$el.querySelector('.swing-indicator')
-        // Downward movement, completes in half the time of full swing, slows down close to the bottom
+        // Downward movement, completes in half the time of full swing
         indicator.style.transition = 'all ' + (this.speed / 2000) + 's'
         indicator.style.transitionTimingFunction = 'ease-out'
         indicator.style.transform = 'translateY(' + (window.innerHeight - 170) + 'px)'
         setTimeout(() => {
-          // Upward movement, slow to fast
+          // Upward movement
           indicator.style.transitionTimingFunction = 'ease-in'
           indicator.style.transform = 'translateY(0)'
         }, this.speed / 2)
-        // console.log(indicator)
-        // this.$el.querySelector('.swing-indicator').style.backgroudColor = 'blue'
       }
     }
   },

@@ -84,8 +84,9 @@ export default {
   line-height: 1.1em;
 }
 
-/* Mobile landscape */
-@media screen and (max-height: 412px) {
+/* Mobile and tablet landscape */
+/* Note: Use DebugWindow.vue to test different device screen sizes */
+@media screen and (max-height: 435px) {
   .swing-counter {
     font-size: 12em;
   }
@@ -94,6 +95,7 @@ export default {
     display: none;
   }
 }
+
 
 .squat {
   color: lightgreen;
