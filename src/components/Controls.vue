@@ -41,39 +41,39 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .controls {
-    position: absolute;
-    width: 100%;
-    bottom: 0px;
-    text-align: center;
-    margin-bottom: 10px;
-  }
+.controls {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+  margin-bottom: 10px;
+}
 
-  button {
-    width: 50px;
-    height: 50px;
-    border: none;
-    outline: none;
-    background: none;
-  }
+button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background: none;
+}
 
-  button.play {
-    background-image: url('../assets/icon-play-50x50.png');
-  }
+button.play {
+  background-image: url('../assets/icon-play-50x50.png');
+}
 
-  button.pause {
-    background-image: url('../assets/icon-pause-50x50.png');
-  }
+button.pause {
+  background-image: url('../assets/icon-pause-50x50.png');
+}
 
-  button:hover {
-    cursor: pointer;
-  }
+button:hover {
+  cursor: pointer;
+}
 
-  .fade-enter-active, .fade-leave-active {
-    transition: all .5s ease-out;
-  }
-  .fade-enter, .fade-leave-to {
-    opacity: 0;
-    transform: scale(0.1);
-  }
+.fade-enter-active, .fade-leave-active {
+  transition: all .5s ease-out;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+  transform: scale(0.1);
+}
 </style>

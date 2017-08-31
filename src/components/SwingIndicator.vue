@@ -40,7 +40,7 @@ export default {
         // Downward movement, completes in half the time of full swing, slows down close to the bottom
         indicator.style.transition = 'all ' + (this.speed / 2000) + 's'
         indicator.style.transitionTimingFunction = 'ease-out'
-        indicator.style.transform = 'translateY(75vh)'
+        indicator.style.transform = 'translateY(' + (window.innerHeight - 170) + 'px)'
         setTimeout(() => {
           // Upward movement, slow to fast
           indicator.style.transitionTimingFunction = 'ease-in'

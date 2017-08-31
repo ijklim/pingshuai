@@ -31,7 +31,7 @@ export default {
   },
   data () {
     return {
-      active: true,
+      active: false,
       speed: 1500       /* in ms, time taken for each swing */
     }
   }

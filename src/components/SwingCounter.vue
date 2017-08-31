@@ -1,10 +1,13 @@
 <template>
-  <div class='swing-counter-wrapper'>
-    <div class='swing-counter' :class='{ "pause": !active, "squat": shouldSquat }' @click='toggle'>
-      {{ counter }}
+  <transition name='fade'>
+    <!-- Adding :key='counter' to swing-counter-wrapper div will transition each counter change -->
+    <div class='swing-counter-wrapper'@click='toggle' v-if='counter > 0'>
+      <div class='swing-counter' :class='{ "pause": !active, "squat": shouldSquat }'>
+        {{ counter }}
+      </div>
+      <div>{{ speed / 1000 }}s per swing</div>
     </div>
-    <div>Speed: {{ speed / 1000 }}s per swing</div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -71,13 +74,13 @@ export default {
   transform: translate(-50%, -50%);
 }
 
+.swing-counter-wrapper:hover {
+  cursor: pointer;
+}
+
 .swing-counter {
   color: green;
   font-size: 20em;
-}
-
-.swing-counter:hover {
-  cursor: pointer;
 }
 
 .squat {
@@ -86,5 +89,13 @@ export default {
 
 .pause {
   color: #999;
+}
+
+
+.fade-enter-active, .fade-leave-active {
+  transition: all .5s ease-out;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0
 }
 </style>
