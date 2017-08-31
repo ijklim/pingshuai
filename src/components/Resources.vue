@@ -39,5 +39,6 @@ ul {
 li {
   font-size: 1.4em;
   line-height: 1.5em;
+  margin-top: 25px;
 }
 </style>

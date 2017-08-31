@@ -71,6 +71,8 @@ button {
   border: none;
   outline: none;
   background: none;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .started button {
