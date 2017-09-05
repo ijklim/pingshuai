@@ -37,11 +37,10 @@ export default {
         let indicator = this.$el.querySelector('.swing-indicator')
         // Downward movement, completes in half the time of full swing
         indicator.style.transition = 'all ' + (this.speed / 2000) + 's'
-        indicator.style.transitionTimingFunction = 'ease-out'
+        indicator.style.transitionTimingFunction = 'ease-in-out'
         indicator.style.transform = 'translateY(' + (window.innerHeight - 170) + 'px)'
         setTimeout(() => {
           // Upward movement
-          indicator.style.transitionTimingFunction = 'ease-in'
           indicator.style.transform = 'translateY(0)'
         }, this.speed / 2)
       }

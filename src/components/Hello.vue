@@ -34,7 +34,7 @@ export default {
   data () {
     return {
       active: false,
-      speed: 1500       /* in ms, time taken for each swing */
+      speed: process.env.SWING_SPEED       /* in ms, time taken for each swing */
     }
   }
 }
