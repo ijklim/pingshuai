@@ -1,10 +1,12 @@
 # Ping Shuai Timing App
 
-App to help time your swing during Ping Shuai Gong 平甩功 exercise. Built on Vue.js 2.0 with PWA (Progressive Web Apps) Framework.
+App to help time your swing during Ping Shuai Gong 平甩功 exercise.
+
+Built using Vue.js 2.0 with PWA (Progressive Web Apps).
 
 <p align="center">
-  <a href="http://pingshuai.aiwebstudio.com" target="_blank">
-    <img src="http://pingshuai.aiwebstudio.com/screenshot.png" width="992px">
+  <a href="https://pingshuai.herokuapp.com" target="_blank">
+    <img src="https://pingshuai.herokuapp.com/screenshot.png" width="992px">
     <br>
     Live Demo
   </a>
