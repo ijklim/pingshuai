@@ -5,7 +5,6 @@
       <div class='swing-counter' :class='{ "pause": !active, "squat": shouldSquat }'>
         {{ counter }}
       </div>
-      <div v-if='counter > 0 && !active' class='speed'>{{ speed / 1000 }}s per swing</div>
     </div>
   </transition>
 </template>
@@ -89,10 +88,6 @@ export default {
 @media screen and (max-height: 435px) {
   .swing-counter {
     font-size: 12em;
-  }
-
-  .speed {
-    display: none;
   }
 }
 
