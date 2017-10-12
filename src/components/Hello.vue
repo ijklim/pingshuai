@@ -7,7 +7,7 @@
     <swing-indicator :active="active" :speed="speed"></swing-indicator>
     <debug-window :show="false"></debug-window>
     <footer>
-      <a href='/#/resources'>Resources</a>
+      <a href='/resources'>Resources</a>
     </footer>
   </div>
 </template>

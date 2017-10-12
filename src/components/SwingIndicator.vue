@@ -65,19 +65,11 @@ export default {
 
 .swing-indicator {
   background-image: url('../assets/swing_indicator.png');
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
   height: 36px;
-  width: 80%;
+  width: 100%;
   margin: auto;
 }
-
-/* .move-enter-active, .move-leave-active {
-  transition: all .5s ease-out;
-} */
-/* .move-enter, .move-leave-to {
-  opacity: 0;
-  transform: translateY(80vh);
-} */
 </style>
