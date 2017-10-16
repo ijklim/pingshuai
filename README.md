@@ -1,4 +1,4 @@
-# Ping Shuai Timing App
+# [Vue.js 2.0] Ping Shuai Timing App
 
 App to help time your swing during Ping Shuai Gong 平甩功 exercise.
 
@@ -28,4 +28,12 @@ npm run build
 npm run build --report
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Deployment
+
+The app will NOT work if files in this repository are uploaded directly to the production server. The files here are suitable for development purpose.
+
+Running the build command indicated above will created deployment ready files in the /dist/ folder.
+
+For instruction on how to deploy this app on an Nginx shared hosting server, please visit https://github.com/ijklim/deploy_vue_shared_hosting for more information.
+
+Instruction on how to deploy this app on Heroku is coming soon.
