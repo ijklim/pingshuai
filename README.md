@@ -34,11 +34,11 @@ npm run build --report
 
 The app will NOT work if files in this repository are uploaded directly to the production server. The files here are suitable for development purpose.
 
-Running the build command indicated above will created deployment ready files in the /dist/ folder.
+Running the build command indicated above will created deployment ready files in the `dist` folder.
 
 For instruction on how to deploy this app on an Nginx shared hosting server, please visit [How to deploy a Vue.js 2.0 with PWA project on an Nginx shared hosting server](https://github.com/ijklim/deploy_vue_shared_hosting) for more information.
 
-Instruction on how to deploy this app on Heroku is coming soon.
+For instruction on how to deploy this app on Heroku, please visit [How to deploy a Vue.js 2.0 with PWA project on Heroku ](https://github.com/ijklim/deploy_vue_heroku).
 
 
 ## Author
