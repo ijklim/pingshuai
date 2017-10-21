@@ -15,14 +15,18 @@ export default {
 <style>
 @import 'https://fonts.googleapis.com/css?family=Orbitron';
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  /* height: 100vh; */
   background-image: url('./assets/bg-1680x1050.jpg');
+  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center center;
   background-size: cover;
+  background-color: white;
 }
 
 #app {
